@@ -24,6 +24,7 @@ public class MainController implements View.OnClickListener, HTTPSWebUtilDomi.On
     private PlayList sendPacket;
     private TracksList tracklist;
     private Intent i;
+    private int item;
 
     public MainController(MainActivity activity){
         this.activity=activity;
@@ -95,6 +96,7 @@ public class MainController implements View.OnClickListener, HTTPSWebUtilDomi.On
 
                 i.putExtra("tracks", tracklist);
                 //Log.e("", ""+sendPacket.getTitle());
+
                 i.putExtra("playStats",sendPacket );
                 activity.startActivity(i);
 
@@ -115,6 +117,7 @@ public class MainController implements View.OnClickListener, HTTPSWebUtilDomi.On
         new Thread(
                 ()->{
                     utilDomi.GETrequest(Constants.LISTINFO, "https://api.deezer.com/playlist/" + activity.getAdapter().getPlaylists().get(position).getId());
+                    //item=position;
                   utilDomi.GETrequest(Constants.TRACKLISTS_TAP, activity.getAdapter().getPlaylists().get(position).getTracklist());
                 }
         ).start();
