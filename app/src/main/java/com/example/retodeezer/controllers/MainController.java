@@ -74,7 +74,6 @@ public class MainController implements View.OnClickListener, HTTPSWebUtilDomi.On
 
                 activity.runOnUiThread(
                         ()->{
-                            completePlaylists();
                             //Log.e("", ""+playListss.get(0).getNb_tracks());
                             activity.getAdapter().setPlaylists(playListss);
                             activity.getAdapter().notifyDataSetChanged();
@@ -108,10 +107,6 @@ public class MainController implements View.OnClickListener, HTTPSWebUtilDomi.On
 
         }
 
-
-    }
-
-    private void completePlaylists() {
 
     }
 
