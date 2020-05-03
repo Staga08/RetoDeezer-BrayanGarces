@@ -66,9 +66,9 @@ public class TracklistAdapter extends RecyclerView.Adapter<TracklistAdapter.MyVi
     public void onBindViewHolder(@NonNull TracklistAdapter.MyViewHolder holder, int position) {
         //Log.e("", ""+ tracks.get(position).getAlbum());
 
-        holder.trackName.setText(tracks.get(position).getTitle()+"");
-        holder.trackArtist.setText(tracks.get(position).getArtist().getName()+"");
-        holder.trackDate.setText(tracks.get(position).getRelease_date()+"");
+        holder.trackName.setText(tracks.get(position).getTitle());
+        holder.trackArtist.setText(tracks.get(position).getArtist().getName());
+        holder.trackDate.setText(tracks.get(position).getRelease_date());
         Glide.with(activity).load(tracks.get(position).getAlbum().getCover_medium()).centerCrop().into(holder.trackPhoto);
     }
 
